@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuoteMe - Professional Quotation Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <!-- Hero Section -->
+    <div class="gradient-bg text-white">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex justify-between items-center">
+                <h1 class="text-3xl font-bold">QuoteMe</h1>
+                <button onclick="generatePDF()" class="px-6 py-2 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-opacity-90 transition-all">
+                    Download PDF
+                </button>
+            </div>
+            <p class="mt-2 text-white/80">Create beautiful, professional quotations in seconds</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-4 -mt-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <!-- Form Section -->
+            <div class="glass-card rounded-xl shadow-xl p-8">
+                <div class="space-y-6">
+                    <!-- Company Details -->
+                    <div>
+                        <h2 class="text-xl font-semibold mb-4 text-gray-800">Company Details</h2>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Company Logo</label>
+                                <input type="file" id="logo" accept="image/*" class="file-input file-input-bordered w-full bg-white" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                                <input type="text" id="companyName" class="input input-bordered w-full bg-white" placeholder="Your Company Name" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Client Details -->
+                    <div>
+                        <h2 class="text-xl font-semibold mb-4 text-gray-800">Client Details</h2>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Client Name</label>
+                            <input type="text" id="clientName" class="input input-bordered w-full bg-white" placeholder="Client's Name" />
+                        </div>
+                    </div>
+
+                    <!-- Items Section -->
+                    <div>
+                        <h2 class="text-xl font-semibold mb-4 text-gray-800">Items</h2>
+                        <div id="itemsContainer">
+                            <div class="items-list space-y-3"></div>
+                            <button class="btn bg-indigo-600 hover:bg-indigo-700 text-white mt-4" onclick="addItem()">
+                                + Add Item
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Payment Details -->
+                    <div>
+                        <h2 class="text-xl font-semibold mb-4 text-gray-800">Payment Terms</h2>
+                        <textarea id="paymentTerms" class="textarea textarea-bordered w-full h-32 bg-white" 
+                            placeholder="Enter payment terms and conditions..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="glass-card rounded-xl shadow-xl p-8">
+                <h2 class="text-xl font-semibold mb-6 text-gray-800">Preview</h2>
+                <div id="previewContent" class="bg-white rounded-lg p-6 min-h-[600px] border border-gray-100">
+                    <!-- Preview content will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
