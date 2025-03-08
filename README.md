@@ -7,7 +7,7 @@ A modern, web-based quotation generator built with HTML, JavaScript, and Tailwin
 ---
 <div align="center">
   <p><strong>💡 Make Your Videos More Engaging</strong></p>
-  <a href="https://render.cut.io" target="_blank">
+  <a href="https://rendercut.io" target="_blank">
     <img src="https://img.shields.io/badge/Render%20Cut-Add%20Subtitles%20To%20Your%20Videos-FF4B4B?style=for-the-badge" alt="Render Cut - Add Subtitles to Your Videos" />
   </a>
   <p><em>Transform your videos with auto-generated subtitles at render.cut.io</em></p>
