@@ -2,7 +2,7 @@
 
 A modern, web-based quotation generator built with HTML, JavaScript, and Tailwind CSS. Create beautiful, professional quotations with ease.
 
-> Created with ❤️ by [Suraj Kadam](https://github.com/yourusername)
+> Created with ❤️ by [Suraj Kadam](https://imsurajkadam.com)
 
 ---
 <div align="center">
